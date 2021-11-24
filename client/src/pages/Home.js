@@ -6,10 +6,7 @@ import gql from 'graphql-tag';
 import PostCard from '../components/PostCard';
 
 const Home = () => {
-  const {
-    loading,
-    data: { getPosts: posts },
-  } = useQuery(FETCH_POSTS_QUERY);
+  const { loading, data } = useQuery(FETCH_POSTS_QUERY);
 
   return (
     <Grid columns={3}>
@@ -20,8 +17,8 @@ const Home = () => {
         {loading ? (
           <h1>Loading posts...</h1>
         ) : (
-          posts &&
-          posts.map((post) => (
+          data.getPosts &&
+          data.getPosts.map((post) => (
             <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
               <PostCard post={post} />
             </Grid.Column>
