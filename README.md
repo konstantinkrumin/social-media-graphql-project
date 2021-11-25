@@ -1,8 +1,8 @@
 # Hi World (Social Media Project w/ GraphQL)
 
-A site that is tracking some basic info about cryptocurrencies and exchanges, and also aggregates a newsfeed.
+This is a platform that allows you to make posts, leave comments and likes to other users' posts. Also authorization is implemented with help of JWT.
 
-Stack: **Javascript**, **React**, **Semantic UI**, **Node.JS**, **GraphQL**, **Apollo GraphQL**
+Stack: **Javascript**, **React**, **Semantic UI**, **Node.JS**, **GraphQL**, **Apollo GraphQL**, **JWT**
 
 [Check It Out Here](https://social-media-graphql-project.vercel.app/)
 
