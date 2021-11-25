@@ -12,9 +12,7 @@ const SinglePost = (props) => {
   const postId = props.match.params.postId;
   const { user } = useContext(AuthContext);
 
-  const {
-    data: { getPost },
-  } = useQuery(FETCH_POST_QUERY, {
+  const { loading, data } = useQuery(FETCH_POST_QUERY, {
     variables: {
       postId,
     },
@@ -22,10 +20,10 @@ const SinglePost = (props) => {
 
   let postMarkup;
 
-  if (!getPost) {
+  if (loading) {
     postMarkup = <p>Loading post...</p>;
-  } else {
-    const { id, body, createdAt, username, comments, likes, likeCount, commentCount } = getPost;
+  } else if (!loading) {
+    const { id, body, createdAt, username, comments, likes, likeCount, commentCount } = data?.getPost;
 
     postMarkup = (
       <Grid>
@@ -58,9 +56,9 @@ const SinglePost = (props) => {
         </Grid.Row>
       </Grid>
     );
-
-    return postMarkup;
   }
+
+  return postMarkup;
 };
 
 const FETCH_POST_QUERY = gql`
