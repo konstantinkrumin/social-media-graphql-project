@@ -1,6 +1,6 @@
 # Hi World (Social Media Project w/ GraphQL)
 
-This is a platform that allows you to make posts, leave comments and likes to other users' posts. Also authorization is implemented with help of JWT. the backend is deployed on Heroku, database is on the MongoDB Cloud (AWS) and frontend is deployed on Vercel.
+This is a platform that allows you to make posts, leave comments and likes to other users' posts. Also authorization is implemented with help of JWT. Backend is deployed on Heroku, database is on the MongoDB Cloud (AWS) and frontend is deployed on Vercel.
 
 Stack: **Javascript**, **React**, **Semantic UI**, **Node.JS**, **GraphQL**, **Apollo GraphQL**, **JWT**
 
