@@ -18,6 +18,10 @@ const SinglePost = (props) => {
     },
   });
 
+  const deletePostCallback = () => {
+    props.history.push('/');
+  };
+
   let postMarkup;
 
   if (loading) {
@@ -49,7 +53,7 @@ const SinglePost = (props) => {
                     {commentCount}
                   </Label>
                 </Button>
-                {user && user.username === username && <DeleteButton postId={id} />}
+                {user && user.username === username && <DeleteButton postId={id} callback={deletePostCallback} />}
               </Card.Content>
             </Card>
           </Grid.Column>
