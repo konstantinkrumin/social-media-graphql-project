@@ -49,12 +49,14 @@ const SinglePost = (props) => {
     const { id, body, createdAt, username, comments, likes, likeCount, commentCount } = data?.getPost;
 
     postMarkup = (
-      <Grid>
+      <Grid centered>
         <Grid.Row>
-          <Grid.Column width={2}>
+          {/* <Grid.Column width={2}> */}
+          <Grid.Column computer={2} tablet={4} mobile={4}>
             <Image floated="right" size="small" src="https://react.semantic-ui.com/images/avatar/large/molly.png" />
           </Grid.Column>
-          <Grid.Column width={10}>
+          {/* <Grid.Column width={10}> */}
+          <Grid.Column computer={10} tablet={16} mobile={12}>
             <Card fluid>
               <Card.Content>
                 <Card.Header>{username}</Card.Header>
@@ -69,7 +71,7 @@ const SinglePost = (props) => {
                     <Button basic color="blue">
                       <Icon name="comments" />
                     </Button>
-                    <Label basic color="blue " pointing="left">
+                    <Label basic color="blue" pointing="left">
                       {commentCount}
                     </Label>
                   </Button>
