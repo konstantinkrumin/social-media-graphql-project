@@ -6,11 +6,17 @@
 }
 
 .form-container {
-  width: 400px;
+  width: 320px;
   margin: auto;
 }
 
 .ui.teal.button:focus,
 .ui.teal.buttons .button:focus {
   background-color: #00b5ad;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    width: 450px;
+  }
 }
