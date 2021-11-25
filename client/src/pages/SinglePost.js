@@ -1,7 +1,7 @@
 import React, { useState, useContext, useRef } from 'react';
 import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/client';
-import { Button, Card, Form, Grid, Icon, Image, Label } from 'semantic-ui-react';
+import { Button, Dimmer, Card, Form, Grid, Icon, Image, Label, Loader } from 'semantic-ui-react';
 import moment from 'moment';
 
 import Popup from '../components/Popup';
@@ -40,7 +40,11 @@ const SinglePost = (props) => {
   let postMarkup;
 
   if (loading) {
-    postMarkup = <p>Loading post...</p>;
+    postMarkup = (
+      <Dimmer active inverted>
+        <Loader size="massive" inverted content="Loading post..." />
+      </Dimmer>
+    );
   } else if (!loading) {
     const { id, body, createdAt, username, comments, likes, likeCount, commentCount } = data?.getPost;
 

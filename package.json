@@ -1,7 +1,7 @@
 {
   "name": "social-media-app-merng",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a platform that allows you to make posts, leave comments and likes to other users' posts. Also authorization is implemented with help of JWT",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index",
