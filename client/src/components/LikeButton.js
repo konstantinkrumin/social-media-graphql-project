@@ -9,17 +9,17 @@ import Popup from './Popup';
 const LikeButton = ({ user, post: { id, likeCount, likes } }) => {
   const [liked, setLiked] = useState(false);
 
+  const [likePost] = useMutation(LIKE_POST_MUTATION, {
+    variables: { postId: id },
+  });
+
   useEffect(() => {
     if (user && likes.find((like) => like.username === user.username)) {
       setLiked(true);
     } else {
       setLiked(false);
     }
-  });
-
-  const [likePost] = useMutation(LIKE_POST_MUTATION, {
-    variables: { postId: id },
-  });
+  }, [liked, user, likes]);
 
   const likeButton = user ? (
     liked ? (

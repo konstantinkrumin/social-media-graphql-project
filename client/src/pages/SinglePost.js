@@ -51,11 +51,9 @@ const SinglePost = (props) => {
     postMarkup = (
       <Grid centered>
         <Grid.Row>
-          {/* <Grid.Column width={2}> */}
           <Grid.Column computer={2} tablet={4} mobile={4}>
             <Image floated="right" size="small" src="https://react.semantic-ui.com/images/avatar/large/molly.png" />
           </Grid.Column>
-          {/* <Grid.Column width={10}> */}
           <Grid.Column computer={10} tablet={16} mobile={12}>
             <Card fluid>
               <Card.Content>
@@ -104,7 +102,6 @@ const SinglePost = (props) => {
             )}
             {comments.map((comment) => (
               <Card fluid key={comment.id}>
-                {console.log(comment.header)}
                 <Card.Content>
                   {user && user.username === comment.username && <DeleteButton postId={id} commentId={comment.id} />}
                   <Card.Header>{comment.username}</Card.Header>

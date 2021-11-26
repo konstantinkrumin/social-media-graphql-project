@@ -3,6 +3,8 @@ module.exports.validateRegisterInput = (username, email, password, confirmPasswo
 
   if (username.trim() === '') {
     errors.username = 'Username must not be empty';
+  } else if (username.trim().length > 6) {
+    errors.username = 'Username must be longer than 6 characters';
   }
 
   if (email.trim() === '') {
@@ -16,6 +18,8 @@ module.exports.validateRegisterInput = (username, email, password, confirmPasswo
 
   if (password === '') {
     errors.password = 'Password must not be empty';
+  } else if (password.length > 6) {
+    errors.password = 'Password must be longer than 6 characters';
   } else if (password !== confirmPassword) {
     errors.confirmPassword = 'Passwords must match';
   }
